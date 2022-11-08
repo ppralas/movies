@@ -8,6 +8,7 @@ import 'package:moviesss/domain/notifier/movie_state.dart';
 final getMovieNotifier = StateNotifierProvider<MovieNotifier, MovieState>(
     (ref) => MovieNotifier(ref.read(movieRepoPorivider)));
 
+//MovieNotifier jer poveznica izmedu repozitorija i korisnickog sucelja, u ovom slucaju se koristi notifier, na istom ovom mjestu po potrebi moze biti provider
 class MovieNotifier extends StateNotifier<MovieState> {
   final MovieRepo movieRepo;
   MovieNotifier(

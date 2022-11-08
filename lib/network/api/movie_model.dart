@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+//Movie Model klasa prima podatke od Dio paketa i prosljeduje ih na mobie repo
 class MovieModel {
   final int page;
   final int totalResoults;
@@ -22,6 +22,7 @@ class MovieModel {
       );
 }
 
+//Lista rezultata koje dobivamo sa servera, to su postedPath, id, title i backdropPath u ovom slucaju
 class Results {
   final String posterPath;
   final int id;

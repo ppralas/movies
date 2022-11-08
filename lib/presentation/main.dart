@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MovieApp());
 
-class MovieApp extends StatelessWidget {
+class MovieApp extends StatelessWidget with ConsumerWidget {
   const MovieApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

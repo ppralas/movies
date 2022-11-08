@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
+//Model responsea koji ocekujemo da cemo dobiti od JSON filea
 class MovieModel {
   final int page;
   final int totalResoults;

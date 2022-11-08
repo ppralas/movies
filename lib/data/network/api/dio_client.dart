@@ -5,6 +5,7 @@ import 'package:riverpod/riverpod.dart';
 
 final getDioClientProvider = Provider<DioClient>((ref) => DioClient());
 
+//Dio klijen je dio zaduzen za komunikaciju sa serverom i predaje podatke na client (Servis)
 class DioClient {
   late final Dio _dio;
 

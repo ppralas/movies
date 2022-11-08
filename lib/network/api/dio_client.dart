@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:moviesss/network/api/endpoints.dart';
 import 'package:moviesss/network/api/movie_model.dart';
 
+//Dio client prica sa Dio paketom i sa Serverom (za ovaj slucaj, a za druge slucajeve svi vanjski uredaji koji imaju komunikaciju)
 class DioClient {
   final Dio _dio;
 

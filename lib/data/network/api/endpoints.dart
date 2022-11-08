@@ -1,3 +1,5 @@
+//Endpointi koji nam koriste da nas app zna koji URL treba loviti, movies za dio koji trebamo dobiti sa servera
+
 class Endpoints {
   Endpoints._();
 
@@ -8,5 +10,4 @@ class Endpoints {
   static const int connectionTimeout = 15000;
 
   static const String movies = '/movie';
-
 }

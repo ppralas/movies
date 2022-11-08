@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+//popis exceptiona koji se mogu desiti, dio errorhendlinga
 class DioExceptions implements Exception {
   late String message;
 
