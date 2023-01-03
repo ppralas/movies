@@ -3,7 +3,7 @@
 class Endpoints {
   Endpoints._();
 
-  static const String baseUrl = "https://api.themoviedb.org/3/";
+  static const String baseUrl = "https://api.themoviedb.org/3";
 
   static const int recieveTimeout = 150000;
 
@@ -11,3 +11,5 @@ class Endpoints {
 
   static const String movies = '/movie';
 }
+
+

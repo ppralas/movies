@@ -1,36 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:moviesss/domain/notifier/movie_notifier.dart';
 
-void main() => runApp(const MovieApp());
+import 'movie_list.dart';
 
-class MovieApp extends StatelessWidget with ConsumerWidget {
-  const MovieApp({super.key});
+void main() {
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Movie List'),
-        ),
-        body: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index) {
-                  return const ListTile(
-                      leading: Icon(Icons.list),
-                      trailing: Text(
-                        "GFG",
-                        style: TextStyle(color: Colors.black, fontSize: 15),
-                      ),
-                      title: Text("List item"));
-                },
-              ),
-            ),
-          ],
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: FirstRoute());
+  }
+}
+
+class FirstRoute extends ConsumerWidget {
+  const FirstRoute({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            ref.read(getMovieNotifier.notifier).getMovieList();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MovieList()),
+            );
+          },
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:moviesss/network/api/movie_model.dart';
+import 'package:moviesss/data/models/movie_model.dart';
 
 part 'movie_state.freezed.dart';
 
