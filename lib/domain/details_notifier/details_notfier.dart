@@ -1,13 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:moviesss/data/models/movie_details.dart';
-import 'package:moviesss/data/repository/movie_repo.dart';
+import 'package:moviesss/data/repository/movie_repository.dart';
 import 'package:moviesss/domain/details_notifier/details_state.dart';
 
 final getMovieDetailsNotifier =
     StateNotifierProvider<MovieDetailsNotifier, MovieDetailsState>(
   (ref) => MovieDetailsNotifier(
-    ref.read(getMovieDetailsNotifier),
+    //NE KORISTITI READ UNUTAR PROVIDERA!!!
+    ref.watch(movieRepoPorivider),
   ),
 );
 
@@ -20,9 +19,9 @@ class MovieDetailsNotifier extends StateNotifier<MovieDetailsState> {
 
   Future<void> getMovieDetails(String movieId) async {
     state = const MovieDetailsState.loading();
-    final movie = await  .fetchMovieDetails(movieId);
+    final movie = await _movieRepo.getMovieDetails(movieId);
     state = movie.fold(
-      (l) => MovieDetailsState.error(l),
+      (l) => MovieDetailsState.error(l.message),
       (r) => MovieDetailsState.loaded(r),
     );
     print(movie);

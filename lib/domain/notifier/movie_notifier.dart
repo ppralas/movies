@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:moviesss/data/repository/movie_repo.dart';
+import 'package:moviesss/data/repository/movie_repository.dart';
 import 'package:moviesss/domain/notifier/movie_state.dart';
 import 'package:riverpod/riverpod.dart';
 
